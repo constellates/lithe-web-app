@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/constellates/lithe-web-app/issues"
   },
-  "homepage": "https://github.com/constellates/lithe-web-app"
+  "homepage": "https://github.com/constellates/lithe-web-app",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.4.3",
+    "react": "^0.12.2",
+    "reactify": "^1.0.0"
+  }
 }
