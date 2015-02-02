@@ -61,6 +61,15 @@ html, body {
 	background: rgba(255,255,255,1);
 }
 
+button {
+	width: 100%;
+	height: 50px;
+	font-size: 22px;
+	font-weight: lighter;
+	background: rgba(100,100,100, 1);
+	border: none;
+}
+
 .title {
 	position: absolute;
 	bottom: 20px;

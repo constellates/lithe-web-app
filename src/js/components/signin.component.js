@@ -1,4 +1,5 @@
 var React = require('react');
+var request = require('superagent');
 
 var SignInCard = React.createClass({
 	render: function () {
@@ -13,7 +14,11 @@ var SignInCard = React.createClass({
     					<label>password</label>
     					<input type="password" placeholder="password" />
     				</div>
+    				<div className="form-group">
+		    			<button type="button" onClick={this.handleSubmit}>Sign In</button>
+		    		</div>
     			</form>
+
 
     			<div className="spinner">
 					<div className="double-bounce1"></div>
@@ -23,6 +28,12 @@ var SignInCard = React.createClass({
     			<div className="title">lithe</div>
     		</div>
     	);
+	},
+	handleSubmit: function () {
+		var url = 'http://www.reddit.com/.json';
+		request.get(url, function (res) {
+			console.log(res);
+		});
 	}
 });
 

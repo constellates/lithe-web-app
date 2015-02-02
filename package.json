@@ -22,6 +22,6 @@
     "gulp-concat": "^2.4.3",
     "react": "^0.12.2",
     "reactify": "^1.0.0",
-    "request": "^2.51.0"
+    "superagent": "^0.21.0"
   }
 }
