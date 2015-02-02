@@ -3,6 +3,7 @@
 
 *, *:before, *:after {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	outline: none;
  }
 
 html, body {
@@ -66,8 +67,19 @@ button {
 	height: 50px;
 	font-size: 22px;
 	font-weight: lighter;
-	background: rgba(100,100,100, 1);
+	background: rgba(51, 51, 51, 0.4);
 	border: none;
+	color: rgba(255,210,170, 1);
+	content: '';
+	cursor: pointer;
+}
+
+button:hover {
+	background: rgba(51,51,51, 0.5);
+}
+
+button:active {
+	background: rgba(51,51,51, 0.3);
 }
 
 .title {
@@ -86,7 +98,7 @@ button {
 .spinner {
   width: 80px;
   height: 80px;
-
+  display: none;
   position: relative;
   margin: 40px auto;
 }
