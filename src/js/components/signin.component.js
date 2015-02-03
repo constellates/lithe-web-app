@@ -1,6 +1,7 @@
 var React = require('react');
 var request = require('superagent');
 var Text = require('./text.component');
+var Password = require('./password.component');
 
 var SignInCard = React.createClass({
 	render: function () {
@@ -8,10 +9,7 @@ var SignInCard = React.createClass({
 			<div className="card">
     			<form>
     				<Text />
-    				<div className="form-group">
-    					<label>password</label>
-    					<input type="password" placeholder="password" />
-    				</div>
+    				<Password />
     				<div className="form-group">
 		    			<button type="button" onClick={this.handleSubmit}>Sign In</button>
 		    		</div>
