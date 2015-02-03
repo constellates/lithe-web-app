@@ -1,10 +1,6 @@
-/* white F5F4EF */
-/* red E55F54 */
+@import 'resets.scss';
+@import 'variables.scss';
 
-*, *:before, *:after {
-	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-	outline: none;
- }
 
 html, body {
 	font-family: helvetica;
@@ -16,7 +12,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background: rgba(255,200,100, .15);
+	background: $background;
 	left: 0px;
 	top: 0px;
 	margin: 0px;
@@ -32,7 +28,7 @@ html, body {
 	margin-left: -20%;
 	top:50%;
 	margin-top:-200px;
-	background: #D85036;
+	background: $red;
 	padding-top:60px;
 	box-shadow: 0px 0px 40px #AAA;
 }
@@ -49,7 +45,7 @@ html, body {
 	left: 5px;
 	font-size: 10px;
 	color: #777;
-	display: none;
+	//display: none;
 }
 .form-group input {
 	width: 100%;
@@ -67,19 +63,19 @@ button {
 	height: 50px;
 	font-size: 22px;
 	font-weight: lighter;
-	background: rgba(51, 51, 51, 0.4);
+	background: $button;
 	border: none;
-	color: rgba(255,210,170, 1);
+	color: $lightFont;
 	content: '';
 	cursor: pointer;
-}
 
-button:hover {
-	background: rgba(51,51,51, 0.5);
-}
+	&:hover {
+		background: rgba($button, 0.6);
+	}
 
-button:active {
-	background: rgba(51,51,51, 0.3);
+	&:active {
+		background: rgba($button, 0.3);
+	}
 }
 
 .title {
@@ -90,7 +86,7 @@ button:active {
 	text-align: center;
 	left: 50%;
 	margin-left: -150px;
-	color: rgba(255,210,170, 1);
+	color: $lightFont;
 	opacity: 1;
 }
 
@@ -112,7 +108,7 @@ button:active {
   position: absolute;
   top: 0;
   left: 0;
-  
+
   -webkit-animation: bounce 4.0s infinite ease-in-out;
   animation: bounce 4.0s infinite ease-in-out;
 }
@@ -128,10 +124,10 @@ button:active {
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
