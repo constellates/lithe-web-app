@@ -1,15 +1,13 @@
 var React = require('react');
 var request = require('superagent');
+var Text = require('./text.component');
 
 var SignInCard = React.createClass({
 	render: function () {
 		return (
 			<div className="card">
     			<form>
-    				<div className="form-group">
-    					<label>username</label>
-    					<input type="text" placeholder="username" />
-    				</div>
+    				<Text />
     				<div className="form-group">
     					<label>password</label>
     					<input type="password" placeholder="password" />
