@@ -23,8 +23,10 @@ gulp.task('copy', function () {
 	.pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['browserify', 'sass', 'copy']);
+gulp.task('build', ['browserify', 'sass', 'copy']);
 
 gulp.task('watch', function () {
-	gulp.watch('src/**/*.*', ['default']);
+    gulp.watch('src/**/*.*', ['default']);
 });
+
+gulp.task('default', ['build', 'watch']);

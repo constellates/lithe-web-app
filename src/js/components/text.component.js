@@ -9,10 +9,11 @@ var Text = React.createClass({
     },
 	render: function () {
 		var value = this.state.value;
+		var placeholder = this.props.placeholder;
 		return (
 			<div className="form-group">
-				{ this.state.showLabel ? <label>username</label> : null }
-				<input type="text" placeholder="username" value={value} onChange={this.handleChange} />
+				{ this.state.showLabel ? <label>{placeholder}</label> : null }
+				<input type="text" placeholder={placeholder} value={value} onChange={this.handleChange} />
 			</div>
 		);
 	},

@@ -4,14 +4,17 @@ var Text = require('./text.component');
 var Password = require('./password.component');
 var LoadButton = require('./load-button.component.js');
 
-var SignInCard = React.createClass({
+var IssueCard = React.createClass({
 	render: function () {
 		return (
 			<div className="card">
     			<form>
-    				<Text placeholder="username" />
+    				<Text placeholder="title" />
+    				<Text placeholder="status" />
+    				<Text placeholder="body" />
+    				<Text placeholder="tags" />
     				<Password placeholder="password" />
-		    		<LoadButton text="sign in" />
+		    		<LoadButton text="create issue" />
     			</form>
     			<div className="title">lithe</div>
     		</div>
@@ -25,4 +28,4 @@ var SignInCard = React.createClass({
 	}
 });
 
-module.exports = SignInCard;
+module.exports = IssueCard;

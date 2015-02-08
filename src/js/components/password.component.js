@@ -9,10 +9,11 @@ var Password = React.createClass({
     },
 	render: function () {
 		var value = this.state.value;
+		var placeholder = this.props.placeholder;
 		return (
 			<div className="form-group">
-				{ this.state.showLabel ? <label>password</label> : null }
-				<input type="password" placeholder="password" value={value} onChange={this.handleChange} />
+				{ this.state.showLabel ? <label>{placeholder}</label> : null }
+				<input type="password" placeholder={placeholder} value={value} onChange={this.handleChange} />
 			</div>
 		);
 	},
