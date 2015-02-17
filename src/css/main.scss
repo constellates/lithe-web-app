@@ -131,6 +131,36 @@ button {
   }
 }
 
+.home {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background: $red;
+
+	img {
+		position: absolute;
+		width: 20%;
+		margin: 100px 50%;
+		left: -10%;
+	}
+
+	h1 {
+		position: absolute;
+		text-align: center;
+		font-size: 70px;
+		font-weight: lighter;
+		width: 20%;
+		margin: 400px 50%;
+		left: -10%;
+		a {
+			text-decoration: none;
+			color: #FFF;
+		}
+	}
+}
+
 /*
 .spinner {
   width: 100%;

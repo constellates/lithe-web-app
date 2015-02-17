@@ -11,7 +11,8 @@ var React        = require('react');
 
 var SignInCard = require('./components/signin.component'),
 	IssueCard = require('./components/issue-form.component'),
-	IssueList = require('./components/issue-list.component');
+	IssueList = require('./components/issue-list.component'),
+	Home      = require('./components/home.component');
 
 // parent view -----------------------------------------------------------
 
@@ -21,8 +22,9 @@ var App = React.createClass({
 			<div>
 				<header>
 					<ul>
-						<li><Link to="inbox">sign in</Link></li>
-						<li><Link to="calendar">create issue</Link></li>
+						<li><Link to="home">home</Link></li>
+						<li><Link to="signIn">sign in</Link></li>
+						<li><Link to="issue">create issue</Link></li>
 						<li><Link to="issues">issues</Link></li>
 					</ul>
 				</header>
@@ -37,10 +39,11 @@ var App = React.createClass({
 
 var routes = (
 	<Route name="app" path="/" handler={App}>
-		<Route name="inbox" handler={SignInCard}/>
-		<Route name="calendar" handler={IssueCard}/>
+		<Route name="home" handler={Home}/>
+		<Route name="signIn" handler={SignInCard}/>
+		<Route name="issue" handler={IssueCard}/>
 		<Route name="issues" handler={IssueList}/>
-		<DefaultRoute handler={SignInCard}/>
+		<DefaultRoute handler={Home}/>
 	</Route>
 );
 
