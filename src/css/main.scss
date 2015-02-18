@@ -3,7 +3,7 @@
 
 
 html, body {
-	font-family: helvetica;
+	font-family: mavenProLight;
 	color: #FFF;
 	font-weight: 100;
 }
@@ -141,22 +141,22 @@ button {
 
 	img {
 		position: absolute;
-		width: 20%;
+		width: 30%;
 		margin: 100px 50%;
-		left: -10%;
+		left: -15%;
 	}
 
 	h1 {
 		position: absolute;
 		text-align: center;
-		font-size: 70px;
+		font-size: 120px;
 		font-weight: lighter;
 		width: 20%;
-		margin: 400px 50%;
+		margin: 500px 50%;
 		left: -10%;
 		a {
 			text-decoration: none;
-			color: #FFF;
+			color: $lightFont;
 		}
 	}
 }
