@@ -27,10 +27,11 @@ var Text = React.createClass({
 	render: function () {
 		var value = this.state.value;
 		var placeholder = this.props.placeholder;
+		var name = this.props.name;
 		return (
 			<div className="form-group">
 				{ this.state.showLabel ? <label>{placeholder}</label> : null }
-				<input type="text" placeholder={placeholder} value={value} onChange={this._handleChange} />
+				<input type="text" name={name} placeholder={placeholder} value={value} onChange={this._handleChange} />
 			</div>
 		);
 	}

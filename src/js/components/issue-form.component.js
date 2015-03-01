@@ -5,8 +5,10 @@ var Password = require('./password.component');
 var LoadButton = require('./load-button.component.js');
 
 var IssueCard = React.createClass({
+	propTypes: {
+		name: React.PropTypes.string
+	},
 	_textChange: function (event) {
-		console.log(event.target);
 		var a = {};
 		a[event.target.name] = event.target.value;
 		this.setState(a);
@@ -32,11 +34,16 @@ var IssueCard = React.createClass({
     	);
 	},
 	handleSubmit: function () {
-		console.log(this.state);
-		//var url = 'http://www.reddit.com/.json';
-		//request.get(url, function (res) {
-		//	console.log(res);
-		//});
+		var state = this.state;
+		var url = 'http://constellates.com:8888/issue';
+		request
+			.post(url)
+			.send(state)
+			.end(function (err, res) {
+				console.log(err);
+				console.log(res);
+			})
+
 	}
 });
 
