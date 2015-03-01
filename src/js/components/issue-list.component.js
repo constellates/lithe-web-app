@@ -3,8 +3,13 @@ var request = require('superagent');
 var LoadButton = require('./load-button.component.js');
 
 var IssueList = React.createClass({
+	getInitialState: function() {
+    	return {
+    		issues: []
+    	};
+    },
 	render: function () {
-		var issues = this.props.issues;
+		var issues = this.state.issues;
 		return (
 			<div className="card">
     			<form>
@@ -16,12 +21,10 @@ var IssueList = React.createClass({
     	);
 	},
 	loadIssues: function () {
-		console.log('here');
 		var url = 'http://www.constellates.com:8888/issue';
 		var self = this;
 		request.get(url, function (res) {
-			self.props.issues = res.body;
-			console.log(res);
+			self.setState({issues: res.body});
 		});
 	}
 });
