@@ -20,6 +20,7 @@ var loadButton = React.createClass({
 		);
 	},
 	signIn: function () {
+		this.props.onClick();
 		this.setState({loading: true});
 		var self = this;
 		setTimeout(function() {
