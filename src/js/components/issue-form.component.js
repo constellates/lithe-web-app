@@ -3,8 +3,10 @@ var request = require('superagent');
 var Text = require('./text.component');
 var Password = require('./password.component');
 var LoadButton = require('./load-button.component.js');
+var Navigation = require('react-router').Navigation;
 
 var IssueCard = React.createClass({
+	mixins: [Navigation],
 	propTypes: {
 		name: React.PropTypes.string
 	},
@@ -26,7 +28,6 @@ var IssueCard = React.createClass({
     				<Text placeholder="status" name="status" onChange={this._textChange} />
     				<Text placeholder="body" name="body" onChange={this._textChange} />
     				<Text placeholder="tags" name="tags" onChange={this._textChange} />
-    				<Password placeholder="password" />
 		    		<LoadButton onClick={this.handleSubmit} text="create issue" />
     			</form>
     			<div className="title">lithe</div>
@@ -36,12 +37,12 @@ var IssueCard = React.createClass({
 	handleSubmit: function () {
 		var state = this.state;
 		var url = 'http://constellates.com:8888/issue';
+		var self = this;
 		request
 			.post(url)
 			.send(state)
 			.end(function (err, res) {
-				console.log(err);
-				console.log(res);
+				self.transitionTo('issues')
 			})
 
 	}
