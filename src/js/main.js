@@ -43,6 +43,7 @@ var routes = (
 		<Route name="signIn" handler={SignInCard}/>
 		<Route name="issue" handler={IssueCard}/>
 		<Route name="issues" handler={IssueList}/>
+		<Route name="issueEdit" handler={IssueCard} path="/issue/:id" />
 		<DefaultRoute handler={Home}/>
 	</Route>
 );

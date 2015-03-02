@@ -1,6 +1,7 @@
 var React = require('react');
 var request = require('superagent');
 var Text = require('./text.component');
+var TextArea = require('./textarea.component');
 var Password = require('./password.component');
 var LoadButton = require('./load-button.component.js');
 var Navigation = require('react-router').Navigation;
@@ -26,7 +27,7 @@ var IssueCard = React.createClass({
     			<form>
     				<Text placeholder="title" name="title" onChange={this._textChange} />
     				<Text placeholder="status" name="status" onChange={this._textChange} />
-    				<Text placeholder="body" name="body" onChange={this._textChange} />
+    				<TextArea placeholder="body" name="body" onChange={this._textChange} />
     				<Text placeholder="tags" name="tags" onChange={this._textChange} />
 		    		<LoadButton onClick={this.handleSubmit} text="create issue" />
     			</form>
