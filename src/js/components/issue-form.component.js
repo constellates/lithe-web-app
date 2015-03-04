@@ -4,10 +4,10 @@ var Text = require('./text.component');
 var TextArea = require('./textarea.component');
 var Password = require('./password.component');
 var LoadButton = require('./load-button.component.js');
-var Navigation = require('react-router').Navigation;
+var Router = require('react-router');
 
 var IssueCard = React.createClass({
-	mixins: [Navigation],
+	mixins: [Router.Navigation, Router.State],
 	propTypes: {
 		name: React.PropTypes.string
 	},
@@ -19,6 +19,20 @@ var IssueCard = React.createClass({
 	//_statusChange: function (event) {
 	//	this.setState({status: event.target.value});
 	//},
+	componentDidMount: function () {
+		var issueId = this.getParams().id;
+		var self = this;
+		if (issueId) {
+			console.log(issueId);
+			var url = 'http://constellates.com:8888/issue/' + issueId;
+			request
+				.get(url)
+				.end(function (err, res) {
+					console.log(res.body);
+					self.setState(res.body);
+				});
+		}
+	},
 	render: function () {
 		var state = this.state;
 		var name = this.props.name;
