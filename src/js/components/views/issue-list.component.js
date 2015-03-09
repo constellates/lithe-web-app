@@ -1,6 +1,5 @@
 var React = require('react');
 var request = require('superagent');
-var LoadButton = require('./load-button.component.js');
 var Issue = require('./issue.component.js');
 
 var IssueList = React.createClass({

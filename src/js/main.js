@@ -9,10 +9,10 @@ var React        = require('react');
 
 // components ------------------------------------------------------------
 
-var SignInCard = require('./components/signin.component'),
-	IssueCard = require('./components/issue-form.component'),
-	IssueList = require('./components/issue-list.component'),
-	Home      = require('./components/home.component');
+var SignInCard = require('./components/views/signin.component'),
+	IssueCard = require('./components/views/issue-form.component'),
+	IssueList = require('./components/views/issue-list.component'),
+	Home      = require('./components/views/home.component');
 
 // parent view -----------------------------------------------------------
 

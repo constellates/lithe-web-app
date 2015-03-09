@@ -1,8 +1,8 @@
 var React = require('react');
 var request = require('superagent');
-var Text = require('./text.component');
-var Password = require('./password.component');
-var LoadButton = require('./load-button.component.js');
+var Text = require('../forms/text.component');
+var Password = require('../forms/password.component');
+var LoadButton = require('../forms/load-button.component.js');
 
 var SignInCard = React.createClass({
 	render: function () {

@@ -11,27 +11,18 @@ var TextArea = React.createClass({
     	};
     },
 	_handleChange: function (event) {
-		this.setState({value: event.target.value});
-		//
-		if (event.target.value.length > 0) {
-			this.setState({showLabel: true});
-		} else {
-			this.setState({showLabel: false});
-		}
-
 		if (this.props.onChange) {
 			this.props.onChange(event);
 		}
-
 	},
 	render: function () {
-		var value = this.state.value;
+		var props = this.props;
 		var placeholder = this.props.placeholder;
 		var name = this.props.name;
 		return (
 			<div className="form-group">
-				{ this.state.showLabel ? <label>{placeholder}</label> : null }
-				<textarea name={name} placeholder={placeholder} value={value} onChange={this._handleChange} />
+				{ props.value.length > 0 ? <label>{placeholder}</label> : null }
+				<textarea name={name} placeholder={placeholder} value={props.value} onChange={this._handleChange} />
 			</div>
 		);
 	}
