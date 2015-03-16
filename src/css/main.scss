@@ -1,5 +1,6 @@
 @import 'resets.scss';
 @import 'variables.scss';
+@import 'forms.scss';
 
 
 html, body {
@@ -9,6 +10,7 @@ html, body {
 	opacity: .95;
 }
 
+/*
 .space {
 	width: 100%;
 	height: 100%;
@@ -36,65 +38,9 @@ html, body {
 	box-shadow: 0px 0px 40px #AAA;
 }
 
-.form-group {
-	position: relative;
-	width: 300px;
-	margin: 20px auto;
-}
-
-.form-group label {
-	position: absolute;
-	top: 3px;
-	left: 5px;
-	font-size: 10px;
-	color: #777;
-	//display: none;
-}
-.form-group input {
-	width: 100%;
-	height: 50px;
-	font-size: 22px;
-	font-weight: lighter;
-	font-family: helvetica;
-	padding: 0px 10px;
-	border: none;
-	background: rgba(255,255,255,1);
-}
-
-.form-group textarea {
-	width: 100%;
-	min-height: 200px;
-	font-size: 22px;
-	font-weight: lighter;
-	font-family: helvetica;
-	padding: 15px 10px;
-	border: none;
-	background: rgba(255,255,255,1);
-}
-
-button {
-	width: 100%;
-	height: 50px;
-	font-size: 22px;
-	font-weight: lighter;
-	background: $button;
-	border: none;
-	color: $lightFont;
-	content: '';
-	cursor: pointer;
-
-	&:hover {
-		background: rgba($button, 0.6);
-	}
-
-	&:active {
-		background: rgba($button, 0.3);
-	}
-}
+*/
 
 .title {
-	position: absolute;
-	bottom: 20px;
 	font-size: 30px;
 	width: 300px;
 	text-align: center;
@@ -151,26 +97,21 @@ button {
 	bottom: 0px;
 	left: 0px;
 	background: $red;
+	overflow-y: scroll;
 
 	img {
-		position: absolute;
-		width: 30%;
-		margin: 100px 50%;
-		left: -15%;
+		width: 20%;
+		margin: 20px 40% 0px 40%;
 	}
 
 	h1 {
-		position: absolute;
 		text-align: center;
-		font-size: 120px;
+		font-size: 70px;
 		font-weight: lighter;
 		width: 20%;
-		margin: 500px 50%;
-		left: -10%;
-		a {
-			text-decoration: none;
-			color: $lightFont;
-		}
+		margin: 0px 40%;
+		text-decoration: none;
+		color: $lightFont;
 	}
 }
 
