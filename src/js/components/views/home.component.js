@@ -9,7 +9,7 @@ var Home = React.createClass({
 		return (
 			<div className="home">
     			<img src={"assets/logo.svg"} />
-    			<h1><Link to="signIn">{'Lithe'}</Link></h1>
+    			<h1>{'Lithe'}</h1>
     		</div>
     	);
 	},

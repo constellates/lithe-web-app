@@ -9,8 +9,7 @@ var React        = require('react');
 
 // components ------------------------------------------------------------
 
-var SignInCard = require('./components/views/signin.component'),
-	IssueCard = require('./components/views/issue-form.component'),
+	var	IssueCard = require('./components/views/issue-form.component'),
 	IssueList = require('./components/views/issue-list.component'),
 	Home      = require('./components/views/home.component');
 
@@ -23,7 +22,6 @@ var App = React.createClass({
 				<header>
 					<ul>
 						<li><Link to="home">home</Link></li>
-						<li><Link to="signIn">sign in</Link></li>
 						<li><Link to="issue">create issue</Link></li>
 						<li><Link to="issues">issues</Link></li>
 					</ul>
@@ -40,7 +38,6 @@ var App = React.createClass({
 var routes = (
 	<Route name="app" path="/" handler={App}>
 		<Route name="home" handler={Home}/>
-		<Route name="signIn" handler={SignInCard}/>
 		<Route name="issue" handler={IssueCard}/>
 		<Route name="issues" handler={IssueList}/>
 		<Route name="issueEdit" handler={IssueCard} path="/issue/:id" />
