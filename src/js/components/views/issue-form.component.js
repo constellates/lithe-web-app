@@ -11,6 +11,9 @@ var IssueCard = React.createClass({
 	propTypes: {
 		name: React.PropTypes.string
 	},
+
+// life cycle events -----------------------------------------------------------------------------------------------------
+
 	getInitialState: function() {
     	return {
     		title: '',
@@ -19,14 +22,6 @@ var IssueCard = React.createClass({
     		tags: ''
     	};
     },
-	_textChange: function (event) {
-		var a = {};
-		a[event.target.name] = event.target.value;
-		this.setState(a);
-	},
-	//_statusChange: function (event) {
-	//	this.setState({status: event.target.value});
-	//},
 	componentDidMount: function () {
 		var issueId = this.getParams().id;
 		var self = this;
@@ -45,10 +40,10 @@ var IssueCard = React.createClass({
 		return (
 			<div className="card">
     			<form>
-    				<Text placeholder="title" name="title" value={state.title} onChange={this._textChange} />
-    				<Text placeholder="status" name="status" value={state.status} onChange={this._textChange} />
-    				<TextArea placeholder="body" name="body" value={state.body} onChange={this._textChange} />
-    				<Text placeholder="tags" name="tags" value={state.tags} onChange={this._textChange} />
+    				<Text placeholder="title" value={state.title} onChange={this._textChange.bind(null, 'title')} />
+    				<Text placeholder="status" value={state.status} onChange={this._textChange.bind(null, 'status')} />
+    				<TextArea placeholder="body" value={state.body} onChange={this._textChange.bind(null, 'body')} />
+    				<Text placeholder="tags" value={state.tags} onChange={this._textChange.bind(null, 'tags')} />
 		    		<LoadButton onClick={this.handleSubmit} text={buttonText} />
     			</form>
     			<div className="title">lithe</div>
@@ -76,8 +71,15 @@ var IssueCard = React.createClass({
 					self.transitionTo('issues')
 				});
 		}
+	},
 
-	}
+// custom methods --------------------------------------------------------------------------------------------------------
+
+	_textChange: function (inputName, event) {
+		var a = {};
+		a[inputName] = event.target.value;
+		this.setState(a);
+	},
 });
 
 module.exports = IssueCard;
