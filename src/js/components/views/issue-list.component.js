@@ -8,16 +8,14 @@ var IssueList = React.createClass({
     		issues: []
     	};
     },
+    componentDidMount: function () {
+    	this._getIssues();
+    },
 	render: function () {
 		var issues = this.state.issues;
-		var url = 'http://www.constellates.com:8888/issue';
-		var self = this;
-		request.get(url, function (res) {
-			self.setState({issues: res.body.reverse()});
-		});
-		var issueNodes = issues.map(function (issue) {
+		var issueNodes = issues.map(function (issue, index) {
 			return (
-				<Issue issueData={issue} />
+				<Issue key={index} issueData={issue} />
 			)
 		})
 		return (
@@ -25,6 +23,13 @@ var IssueList = React.createClass({
     			{issueNodes}
     		</div>
     	);
+	},
+	_getIssues: function () {
+		var url = 'http://www.constellates.com:8888/issue';
+		var self = this;
+		request.get(url, function (res) {
+			self.setState({issues: res.body.reverse()});
+		});
 	}
 });
 
