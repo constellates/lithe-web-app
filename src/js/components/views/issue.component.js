@@ -1,5 +1,4 @@
-var React = require('react'),
-	request = require('superagent');
+var React = require('react');
 
 var Issue = React.createClass({
 
@@ -18,7 +17,7 @@ var Issue = React.createClass({
 				<div className="details">
 					<div className="actions clearfix">
 						<button>save</button>
-						<button onClick={this._deleteDetail}>delete</button>
+						<button onClick={this._deleteIssue}>delete</button>
 					</div>
 					<div className="data">
 						<span>status: {issueData.status}</span>
@@ -42,10 +41,8 @@ var Issue = React.createClass({
 		this.setState({showDetails: !this.state.showDetails});
 	},
 
-	_deleteDetail: function () {
-		var url = 'http://www.constellates.com:8888/issue/' + this.props.issueData._id;
-		console.log(url);
-		request.del(url).end(function (err, res) {});
+	_deleteIssue: function () {
+		this.props.deleteIssue(this.props.issueData._id);
 	}
 
 });

@@ -19,7 +19,7 @@ var TaskBoard = React.createClass({
 		var issues = this.state.issues;
 		return (
 			<div className="backlog-manager">
-				<IssueList issues={issues} />
+				<IssueList issues={issues} deleteIssue={this._deleteIssue} />
 			</div>
 		);
 	},
@@ -31,6 +31,18 @@ var TaskBoard = React.createClass({
 		var self = this;
 		request.get(url, function (res) {
 			self.setState({issues: res.body.reverse()});
+		});
+	},
+
+	_deleteIssue: function (issueId) {
+		var url = 'http://www.constellates.com:8888/issue/' + issueId;
+		var self = this;
+		request.del(url).end(function (err, res) {
+			if (!err) {
+				self.setState({
+					issues: self.state.issues.filter(function (issue) {return issue._id != issueId})
+				});
+			}
 		});
 	}
 
