@@ -14,14 +14,8 @@ html, body {
 }
 
 button {
-	width: 100%;
-	height: 50px;
-	font-size: 22px;
 	font-weight: lighter;
-	background: $button;
 	border: none;
-	color: $lightFont;
-	content: '';
 	cursor: pointer;
 
 	&:hover {
