@@ -1,0 +1,18 @@
+.nav-bar {
+	background: #888;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1000;
+
+	ul li {
+		float: left;
+		margin: 0px 10px;
+
+		a {
+			color: #FFF;
+		}
+	}
+}

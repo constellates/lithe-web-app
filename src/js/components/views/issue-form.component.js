@@ -38,16 +38,15 @@ var IssueCard = React.createClass({
 		var state = this.state;
 		var buttonText = this.getParams().id ? 'save' : 'create';
 		return (
-			<div className="card">
-    			<form>
-    				<Text placeholder="title" value={state.title} onChange={this._textChange.bind(null, 'title')} />
-    				<Text placeholder="status" value={state.status} onChange={this._textChange.bind(null, 'status')} />
-    				<TextArea placeholder="body" value={state.body} onChange={this._textChange.bind(null, 'body')} />
-    				<Text placeholder="tags" value={state.tags} onChange={this._textChange.bind(null, 'tags')} />
+			<div className="issue-form">
+				<form>
+					<Text placeholder="title" value={state.title} onChange={this._textChange.bind(null, 'title')} />
+					<Text placeholder="status" value={state.status} onChange={this._textChange.bind(null, 'status')} />
+					<TextArea placeholder="body" value={state.body} onChange={this._textChange.bind(null, 'body')} />
+					<Text placeholder="tags" value={state.tags} onChange={this._textChange.bind(null, 'tags')} />
 		    		<LoadButton onClick={this.handleSubmit} text={buttonText} />
-    			</form>
-    			<div className="title">lithe</div>
-    		</div>
+				</form>
+			</div>
     	);
 	},
 	handleSubmit: function () {

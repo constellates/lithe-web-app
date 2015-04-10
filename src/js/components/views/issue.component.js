@@ -1,21 +1,40 @@
 var React = require('react');
-var Router = require('react-router');
 
 var Issue = React.createClass({
-	mixin: [Router.Navigation],
+
+// life cycle events -----------------------------------------------------------------
+
+	getInitialState: function () {
+		return {
+			showDetails: false
+		};
+	},
 	render: function () {
 		var issueData = this.props.issueData;
-		return (
-			<div className="issue">
-				<Link to="issueEdit" params={{id: issueData._id}}>
-					<h2>{issueData.title}</h2>
-					<h3>status: {issueData.status}</h3>
+		var details = '';
+		if (this.state.showDetails) {
+			details = (
+				<div className="details">
+					<span>status: {issueData.status}</span>
 					<p>{issueData.body}</p>
 					<span>tags: {issueData.tags}</span>
-				</Link>
+				</div>
+			);
+		}
+		return (
+			<div className="issue">
+				<h2 onClick={this._toggleDetails}>{issueData.title}</h2>
+				{details}
 			</div>
 		);
+	},
+
+// custom methods --------------------------------------------------------------------
+
+	_toggleDetails: function () {
+		this.setState({showDetails: !this.state.showDetails});
 	}
+
 });
 
 module.exports = Issue;

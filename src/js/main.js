@@ -21,21 +21,22 @@ var App = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<header>
+				<nav className="nav-bar">
 					<ul>
-						<li><Link to="home">home</Link></li>
-						<li><Link to="signIn">sign in</Link></li>
-						<li><Link to="issue">create issue</Link></li>
-						<li><Link to="issues">issues</Link></li>
 						<li><Link to="taskboard">taskboard</Link></li>
 					</ul>
-				</header>
+				</nav>
 
 				<RouteHandler/>
 			</div>
 		)
 	}
 });
+
+// <li><Link to="home">home</Link></li>
+// <li><Link to="signIn">sign in</Link></li>
+// <li><Link to="issue">create issue</Link></li>
+// <li><Link to="issues">issues</Link></li>
 
 // routes ----------------------------------------------------------------
 
@@ -47,7 +48,7 @@ var routes = (
 		<Route name="issues" handler={IssueList}/>
 		<Route name="issueEdit" handler={IssueCard} path="/issue/:id" />
 		<Route name="taskboard" handler={Taskboard}/>
-		<DefaultRoute handler={Home}/>
+		<DefaultRoute handler={Taskboard}/>
 	</Route>
 );
 
