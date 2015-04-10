@@ -12,6 +12,7 @@ var React        = require('react');
 var SignInCard = require('./components/views/signin.component'),
 	IssueCard = require('./components/views/issue-form.component'),
 	IssueList = require('./components/views/issue-list.component'),
+	Taskboard = require('./components/views/taskboard.component'),
 	Home      = require('./components/views/home.component');
 
 // parent view -----------------------------------------------------------
@@ -26,6 +27,7 @@ var App = React.createClass({
 						<li><Link to="signIn">sign in</Link></li>
 						<li><Link to="issue">create issue</Link></li>
 						<li><Link to="issues">issues</Link></li>
+						<li><Link to="taskboard">taskboard</Link></li>
 					</ul>
 				</header>
 
@@ -44,6 +46,7 @@ var routes = (
 		<Route name="issue" handler={IssueCard}/>
 		<Route name="issues" handler={IssueList}/>
 		<Route name="issueEdit" handler={IssueCard} path="/issue/:id" />
+		<Route name="taskboard" handler={Taskboard}/>
 		<DefaultRoute handler={Home}/>
 	</Route>
 );
