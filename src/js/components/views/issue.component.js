@@ -23,7 +23,7 @@ var Issue = React.createClass({
 		}
 		return (
 			<div className="issue">
-				<h2 onClick={this._toggleDetails}>{issueData.title}</h2>
+				<div className="title-bar" onClick={this._toggleDetails}>{issueData.title}</div>
 				{details}
 			</div>
 		);
